@@ -19,10 +19,24 @@ then install lein localrepo plugin and run::
 
 on a folder where all the required dependency jars are located
 
+
+
 Usage
 -----
 
-see google-docs-spreadsheets-cli for sample usage in code, it includes a cli
+to use in your project you will have to download it and do lein install, then
+add on your dependencies::
+
+    [marianoguerra/google-docs-spreadsheets "0.1.1-SNAPSHOT"]
+
+I didn't publish it to clojars (yet) since I don't know if it makes sense to
+publish it when some deps must be manually installed, let me know what you
+think opening an issue if you have a better idea.
+
+Try it
+------
+
+see google-docs-spreadsheets-cli for code sample usage, it includes a cli
 that you can run using lein run, if ran without arguments it will:
 
 * ask for username and password
