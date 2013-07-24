@@ -13,10 +13,6 @@ that you can download from here:
 
 http://code.google.com/p/gdata-java-client/downloads/list
 
-you will also need oath client library from here:
-
-http://google-oauth-java-client.googlecode.com/files/google-oauth-java-client-1.15.0-rc.zip
-
 then install lein localrepo plugin and run::
 
     for i in $PWD/*.jar; do lein localrepo install $(lein localrepo coords $i); done 
