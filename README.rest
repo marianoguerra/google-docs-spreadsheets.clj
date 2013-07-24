@@ -1,0 +1,58 @@
+google-docs-spreadsheets
+========================
+
+A Clojure library designed to interact with google spreadsheets
+
+Setup
+-----
+
+Since the gdata libs are in a zip you will have to download them and install
+them locally, the ones you need are the ones specified in the project
+dependencies (project.clj) they are under java/lib and java/deps in the zip
+that you can download from here:
+
+http://code.google.com/p/gdata-java-client/downloads/list
+
+you will also need oath client library from here:
+
+http://google-oauth-java-client.googlecode.com/files/google-oauth-java-client-1.15.0-rc.zip
+
+then install lein localrepo plugin and run::
+
+    for i in $PWD/*.jar; do lein localrepo install $(lein localrepo coords $i); done 
+
+on a folder where all the required dependency jars are located
+
+Usage
+-----
+
+see google-docs-spreadsheets-cli for sample usage in code, it includes a cli
+that you can run using lein run, if ran without arguments it will:
+
+* ask for username and password
+* list all the documents available
+* ask you to pick one by number
+* list all the worksheets of that document
+* ask you to pick one and then dump all the cells from (0, 0) to (10, 10) to
+  the output
+
+if you provide spreadsheet id and worksheet id it will dump the cells like the
+last step above.
+
+examples::
+
+    # spreadsheet dump
+    lein run -- -s tBp80BiVqx6-WqTyqgP8imi -w od6 -u user@gmail.com -p 'secret'
+
+    # step by step selection
+    lein run
+
+    # step by step selection specifying username and password
+    lein run -- -u user@gmail.com -p 'secret'
+
+License
+-------
+
+Copyright © 2013 Mariano Guerra
+
+Distributed under the Eclipse Public License, the same as Clojure.
